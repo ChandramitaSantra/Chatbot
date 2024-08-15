@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Document Upload and Chat Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Document Upload Section -->
+        <div class="upload-section">
+            <h1>Upload Document</h1>
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" accept=".txt,.pdf">
+                <button type="submit">Upload</button>
+            </form>
+            <p id="assetIdDisplay" class="hidden">Asset ID: <span id="assetId"></span></p>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-section hidden" id="chatSection">
+            <h1>Chat Interface</h1>
+            <div id="chatContainer">
+                <div id="chatMessages"></div>
+            </div>
+            <form id="chatForm">
+                <input type="text" id="chatInput" placeholder="Type a message...">
+                <button type="submit">Send</button>
+            </form>
+            <button id="showHistory">Show Chat History</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
